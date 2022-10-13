@@ -2,6 +2,9 @@
 common/DRAMPower
 ramulator
 zsim-ramulator/libconfig
+zsim-ramulator/*
+!zsim-ramulator/pin
+!zsim-ramulator/src
 build
 *.o
 *.log
