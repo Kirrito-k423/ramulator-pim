@@ -1,0 +1,7 @@
+.ccls-cache
+common/DRAMPower
+ramulator
+zsim-ramulator/libconfig
+build
+*.o
+*.log

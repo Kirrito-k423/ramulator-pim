@@ -20,5 +20,5 @@ else
 	cd ..
 
 	export PINPATH
-	scons -j$NUMCPUS
+	python2 $(which scons) -j${NUMCPUS}
 fi
