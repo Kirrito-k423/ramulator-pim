@@ -56,15 +56,15 @@ def buildSim(cppFlags, dir, type, pgo=None):
         pinInclDir = joinpath(pinInclDir, "pin")
         assert os.path.exists(joinpath(pinInclDir, "pin.H"))
 
-    # Pin 2.14 changes location of XED
+    # Pin 3.24 changes location of XED
     xedName = "xed2"  # used below
-    xedPath = joinpath(PINPATH, "extras/" + xedName + "-intel64/include")
+    xedPath = joinpath(PINPATH, "extras/" + xedName + "-intel64/include/xed/")
     if not os.path.exists(xedPath):
         xedName = "xed"
-        xedPath = joinpath(PINPATH, "extras/" + xedName + "-intel64/include")
+        xedPath = joinpath(PINPATH, "extras/" + xedName + "-intel64/include/xed/")
         assert os.path.exists(xedPath)
 
-    env["CPPPATH"] = [xedPath,
+    env["CPPPATH"] = [xedPath, joinpath(PINPATH,"extras/crt/include"), joinpath(PINPATH, "extras/crt/include/kernel/uapi/"),
             pinInclDir, joinpath(pinInclDir, "gen"),
             joinpath(PINPATH, "extras/components/include"), joinpath("/usr/include/hdf5/serial")]
 
